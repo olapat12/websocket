@@ -16,6 +16,10 @@ mongoose.connect(process.env.DB_CONNECT,
     { useNewUrlParser: true },
     ()=> console.log('connected to db'));
 
+    app.use('/', (req, res)=>{
+      res.send('hello world')
+    })
+
 wss.on('connection', (ws)=>{
 
   console.log('connected')
